@@ -1,6 +1,12 @@
-from fastapi import FastAPI
 import logging
+import sys
 from contextlib import asynccontextmanager
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent.parent.resolve()))
+
+from app.routers.auth_router import router as auth_router
+from fastapi import FastAPI
 
 logger = logging.getLogger("uvicorn.error")
 
@@ -9,6 +15,7 @@ logger = logging.getLogger("uvicorn.error")
 async def lifespan(app: FastAPI):
     logger.info("Starting InfoPulse API")
     try:
+        app.include_router(auth_router, prefix="/auth")
         yield
     finally:
         logger.info("Stopping InfoPulse API")

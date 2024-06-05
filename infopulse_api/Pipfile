@@ -8,6 +8,8 @@ fastapi = "*"
 requests = "*"
 sqlmodel = "*"
 pydantic = "*"
+pyjwt = "*"
+passlib = {extras = ["bcrypt"], version = "*"}
 
 [dev-packages]
 pytest = "*"
