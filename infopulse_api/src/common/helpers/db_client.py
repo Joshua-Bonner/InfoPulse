@@ -1,3 +1,4 @@
+import contextlib
 import os
 
 from dotenv import load_dotenv
@@ -22,6 +23,10 @@ class DatabaseClient(metaclass=SingletonMeta):
     def __init__(self):
         self.engine = create_engine(DATABASE_URL)
 
+    @contextlib.contextmanager
     def get_session(self):
-        with Session(self.engine) as session:
+        session = Session(bind=self.engine)
+        try:
             yield session
+        finally:
+            session.close()

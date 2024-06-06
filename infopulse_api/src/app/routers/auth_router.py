@@ -22,6 +22,7 @@ load_dotenv()
 router = APIRouter()
 logger = logging.getLogger("uvicorn.error")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+user_handler = UserHandler()
 
 credentials_exception = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
@@ -41,7 +42,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         token_data = Token(username=username)
     except InvalidTokenError:
         raise credentials_exception
-    user: User = await UserHandler.get_user_by_username(token_data.username)
+    user: User = await user_handler.get_user_by_username(token_data.username)
     if user is None:
         raise credentials_exception
     return user
@@ -56,10 +57,10 @@ async def get_current_active_user(
 
 
 @router.post("/token", response_model=Token)
-async def login_for_access_token(
+def login_for_access_token(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()]
 ) -> Token:
-    user: User = await authenticate_user(form_data.username, form_data.password)
+    user: User = authenticate_user(form_data.username, form_data.password)
     if not user:
         raise credentials_exception
     if not verify_pwd(form_data.password, user.password):

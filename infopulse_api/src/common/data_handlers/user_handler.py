@@ -1,6 +1,10 @@
+import logging
+
 from common.helpers.db_client import DatabaseClient
 from models.user import User
 from sqlmodel import select
+
+logger = logging.getLogger("uvicorn.error")
 
 
 class UserHandler:

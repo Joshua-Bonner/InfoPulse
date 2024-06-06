@@ -1,3 +1,4 @@
+import logging
 import os
 from datetime import datetime, timedelta, timezone
 
@@ -10,10 +11,13 @@ from passlib.context import CryptContext
 
 load_dotenv()
 
+logger = logging.getLogger("uvicorn.error")
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM")
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
+user_handler = UserHandler()
 
 
 def verify_pwd(pwd, pwd_hash):
@@ -42,8 +46,8 @@ def decode_access_token(token: str):
         return None
 
 
-async def authenticate_user(username: str, password: str) -> User | bool:
-    user: User = await UserHandler.get_user_by_username(username)
+def authenticate_user(username: str, password: str) -> User | bool:
+    user: User = user_handler.get_user_by_username(username)
     if not user:
         return False
     if not verify_pwd(password, user.password):

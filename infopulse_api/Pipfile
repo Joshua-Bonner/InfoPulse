@@ -9,7 +9,9 @@ requests = "*"
 sqlmodel = "*"
 pydantic = "*"
 pyjwt = "*"
-passlib = {extras = ["bcrypt"], version = "*"}
+passlib = "*"
+psycopg2 = "*"
+bcrypt = "*"
 
 [dev-packages]
 pytest = "*"
