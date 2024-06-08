@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Ref } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
-const username = ref('')
-const password = ref('')
+const username: Ref<string> = ref('')
+const password: Ref<string> = ref('')
+const showPass: Ref<boolean> = ref(false)
+const loginForm: Ref<HTMLFormElement | null> = ref(null)
+
 const login = () => {
-  console.log('Login', username.value, password.value)
+  if (loginForm.value?.checkValidity()) {
+    useAuthStore().login(username.value, password.value)
+    loginForm.value?.reset()
+  }
 }
-
 </script>
 
 <template>
@@ -18,7 +25,7 @@ const login = () => {
             <h1>InfoPulse</h1>
           </v-card-title>
           <v-card-text>
-            <v-form>
+            <v-form @submit.prevent="login" @keyup.enter="login" ref="loginForm">
               <v-text-field
                 v-model="username"
                 label="Username"
@@ -29,7 +36,9 @@ const login = () => {
                 v-model="password"
                 label="Password"
                 required
-                type="password"
+                :append-inner-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
+                @click:append-inner="showPass = !showPass"
+                :type="showPass ? 'text' : 'password'"
                 prepend-icon="mdi-lock"
               ></v-text-field>
               <v-row>

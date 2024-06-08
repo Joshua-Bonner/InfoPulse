@@ -8,6 +8,10 @@ fastapi = "*"
 requests = "*"
 sqlmodel = "*"
 pydantic = "*"
+pyjwt = "*"
+passlib = "*"
+psycopg2 = "*"
+bcrypt = "*"
 
 [dev-packages]
 pytest = "*"

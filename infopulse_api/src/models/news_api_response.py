@@ -1,6 +1,7 @@
-from pydantic import BaseModel
 from typing import List
-from .article import Article
+
+from article import Article
+from pydantic import BaseModel
 
 
 class NewsApiResponse(BaseModel):
