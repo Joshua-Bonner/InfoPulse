@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createPinia } from 'pinia'
-import App from '@/App.vue'
+import LoginView from '@/views/LoginView.vue'
 import router from '@/router'
 
-describe('App', () => {
+describe('Login', () => {
   it('renders without errors', async () => {
     const pinia = createPinia()
-    const wrapper = mount(App, {
+    const wrapper = mount(LoginView, {
       global: {
         plugins: [router, pinia]
       }

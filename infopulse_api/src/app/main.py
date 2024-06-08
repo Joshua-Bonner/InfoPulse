@@ -8,8 +8,14 @@ sys.path.append(str(Path(__file__).parent.parent.resolve()))
 from app.routers.auth_router import router as auth_router
 from app.routers.user_router import router as user_router
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 logger = logging.getLogger("uvicorn.error")
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "http://localhost:5173",
+]
 
 
 @asynccontextmanager
@@ -30,3 +36,16 @@ app = FastAPI(
     contact={"name": "Joshua Bonner", "email": "jbb5882@psu.edu"},
     lifespan=lifespan,
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}

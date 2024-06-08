@@ -6,3 +6,9 @@ To run the API in development mode, execute the following command:
 ```bash
 fastapi dev src/app/main.py --port 8000
 ```
+
+## Run Pytest
+To run unit tests, execute the following command:
+```bash
+pytest
+```
