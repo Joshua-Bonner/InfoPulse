@@ -1,0 +1,108 @@
+{
+  "articles": [
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Gary Grumbach, Daniel Barnes, Owen Hayes, Sarah Fitzpatrick, Dareh Gregorian",
+            "title": "Hunter Biden found guilty on federal gun charges after a trial that laid bare his addiction struggles - NBC News",
+            "description": "WILMINGTON, Del. — A jury in Delaware on Tuesday found Hunter Biden, the son of President Joe Biden, guilty on three felony gun charges after a weeklong trial that focused on his history of drug addiction.",
+            "url": "https://www.nbcnews.com/politics/justice-department/verdict-reached-hunter-biden-gun-trial-rcna155458",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2024-06/240607-hunter-biden-al-0939-f2db1b.jpg",
+            "publishedAt": "2024-06-11T16:16:48Z",
+            "content": "WILMINGTON, Del. A jury in Delaware on Tuesday found Hunter Biden, the son of President Joe Biden, guilty on three felony gun charges after a weeklong trial that focused on his history of drug addict… [+7071 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Niamh Kennedy, Louis Mian, Leah Dolan",
+            "title": "King Charles’ first official portrait vandalized by activists - CNN",
+            "description": "Activists from an animal rights group have vandalized the first official portrait of King Charles, which is currently on display in a London gallery.",
+            "url": "https://www.cnn.com/2024/06/11/style/king-charles-portrait-vandalized/index.html",
+            "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/still-20701257-8846-816-still.jpg?c=16x9&q=w_800,c_fill",
+            "publishedAt": "2024-06-11T15:31:00Z",
+            "content": "Activists from an animal rights group have vandalized the first official portrait of King Charles, currently on display in a London gallery.\r\nCampaign group Animal Rising posted a video on its social… [+3660 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Josh Schafer",
+            "title": "Apple stock surges to record high after AI announcements - Yahoo Finance",
+            "description": "Apple stock rose to a new intraday record high on Tuesday as investors digested the company's announcement of Apple Intelligence.",
+            "url": "https://finance.yahoo.com/news/apple-stock-surges-to-record-high-after-ai-announcements-150325922.html",
+            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/_bV7BlhMXvFehk9GYqaPvQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2024-06/bb912800-2803-11ef-bfea-f82fec74653e",
+            "publishedAt": "2024-06-11T15:25:52Z",
+            "content": "Apple's (AAPL) stock surged by as much as 6% on Tuesday to reach an intraday record as investors digested the announcement of its AI platform, Apple Intelligence. \r\nAfter the stock fell on Monday dur… [+3462 chars]"
+        },
+        {
+            "source": {
+                "id": "nfl-news",
+                "name": "NFL News"
+            },
+            "author": null,
+            "title": "Aaron Rodgers, Haason Reddick missing Jets' mandatory minicamp; absences 'unexcused' - NFL.com",
+            "description": "The New York Jets will open mandatory minicamp without two of their biggest names: Aaron Rodgers and Haason Reddick. HC Robert Saleh told reporters on Tuesday that Rodgers and Reddick were both unexcused absences from minicamp.",
+            "url": "https://www.nfl.com/news/aaron-rodgers-haason-reddick-missing-jets-mandatory-minicamp-absences-unexcused",
+            "urlToImage": "https://static.www.nfl.com/image/upload/t_editorial_landscape_12_desktop/league/s7jyfg5xd5qy4s2uq7bc",
+            "publishedAt": "2024-06-11T15:24:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gameinformer.com"
+            },
+            "author": "Wesley LeBlanc",
+            "title": "Get Your First Look At Dragon Age: The Veilguard's Real-Time Action Combat In First Gameplay Trailer - Game Informer",
+            "description": "More than 20 minutes of flashy Veilguard action, coming right up.",
+            "url": "https://www.gameinformer.com/news/2024/06/11/get-your-first-look-at-dragon-age-the-veilguards-real-time-action-combat-in-first",
+            "urlToImage": "https://www.gameinformer.com/sites/default/files/styles/thumbnail/public/2024/06/11/15844484/veilguard_promo_2.jpg",
+            "publishedAt": "2024-06-11T15:21:00Z",
+            "content": "Developer BioWare has released the first official gameplay trailer for its upcoming RPG, Dragon Age: The Veilguard. Featuring more than 20 minutes of gameplay, this is the first look at the game's ac… [+1754 chars]"
+        },
+        {
+            "source": {
+                "id": "espn",
+                "name": "ESPN"
+            },
+            "author": "Nick Wagoner",
+            "title": "49ers' Christian McCaffrey to be Madden NFL 25 cover athlete - ESPN",
+            "description": "EA Sports announced Tuesday that 49ers RB Christian McCaffrey will be the Madden NFL 25 cover athlete when it releases Aug. 16.",
+            "url": "https://www.espn.com/nfl/story/_/id/40325640/49ers-christian-mccaffrey-madden-nfl-25-cover-athlete",
+            "urlToImage": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0610%2Fr1344302_400x600_2%2D3.jpg",
+            "publishedAt": "2024-06-11T15:04:00Z",
+            "content": "SANTA CLARA, Calif. -- In the long and storied history of the San Francisco 49ers, the franchise has earned nearly every honor and accolade available, except one. Since the Madden video game series s… [+3542 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "YouTube"
+            },
+            "author": null,
+            "title": "Naomi Watts & Jonathan Bailey l Actors on Actors - Variety",
+            "description": "Naomi Watts ('FEUD: Capote vs. The Swans') and Jonathan Bailey ('Fellow Travelers') have a blast chatting for the first time on Variety’s Actors on Actors. B...",
+            "url": "https://www.youtube.com/watch?v=f7V_OTjUIJ4",
+            "urlToImage": "https://i.ytimg.com/vi/f7V_OTjUIJ4/maxresdefault.jpg",
+            "publishedAt": "2024-06-11T15:00:40Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Daniel Arkin",
+            "title": "Virginia NAACP filing suit against school board that restored names of Confederate leaders - NBC News",
+            "description": "The Virginia NAACP is suing the Shenandoah County school board for restoring Confederate leaders' names to public schools.",
+            "url": "https://www.nbcnews.com/news/us-news/virginia-naacp-sues-school-board-over-confederate-names-rcna156505",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2024-06/240612-mountain-view-high-school-quicksburg-va-mn-0925-fdf2e5.jpg",
+            "publishedAt": "2024-06-11T14:42:17Z",
+            "content": "The Virginia chapter of the NAACP and five students plan to file a federal lawsuit Tuesday against the school board in Shenandoah County after the six-person body approved a proposal restoring the na… [+4202 chars]"
+        }
+    ]
+}

@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { Ref } from 'vue'
-
 interface User {
   token: string
   token_type: string
@@ -10,6 +9,7 @@ interface User {
 
 export const useUserStore = defineStore('user', () => {
   const user = ref(JSON.parse(localStorage.getItem('user') || '{}')) as Ref<User>
+  const curentUserName = computed(() => user.value.username)
 
   function setUser(newUser: User) {
     user.value = newUser
@@ -17,6 +17,7 @@ export const useUserStore = defineStore('user', () => {
 
   return {
     user,
+    curentUserName,
     setUser
   }
 })
