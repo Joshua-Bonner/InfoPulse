@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
+</script>
 
 <template>
   <v-container>
@@ -9,7 +13,7 @@
       </v-toolbar-title>
       <v-btn class="text-uppercase font-weight-bold" rounded="0">Dashboard</v-btn>
       <v-btn rounded="0" icon="mdi-dots-vertical" />
-      <v-btn rounded="0" icon="mdi-logout" />
+      <v-btn rounded="0" id="logout" icon="mdi-logout" @click="userStore.logout" />
     </v-app-bar>
   </v-container>
 </template>
