@@ -3,17 +3,17 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
 
-const tab: Ref<string | null> = ref(null)
+const searchTab: Ref<string | null> = ref(null)
 const searchStore = useSearchStore()
 </script>
 <template>
-  <v-tabs v-model="tab" direction="vertical">
+  <v-tabs v-model="searchTab" direction="vertical">
     <v-tab v-for="search in searchStore.searches" :key="search.id" :value="search.query">
       {{ search.query }}
     </v-tab>
   </v-tabs>
 
-  <v-tabs-window v-model="tab" class="tab-content">
+  <v-tabs-window v-model="searchTab" class="tab-content">
     <v-tabs-window-item
       v-for="search in searchStore.searches"
       :key="search.id"

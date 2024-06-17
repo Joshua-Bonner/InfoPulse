@@ -1,10 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+import { useSearchStore } from '@/stores/search'
+import type { Search } from '@/stores/search'
 
 const search: Ref<string> = ref('')
+const searchStore = useSearchStore()
 
 const onClick = () => {
+  const newSearch: Search = {
+    id: searchStore.searches.length + 1,
+    query: search.value,
+    content: []
+  }
+  searchStore.addSearch(newSearch)
   console.log('Search:', search.value)
 }
 </script>

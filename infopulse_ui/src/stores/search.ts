@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import type { Article } from '@/stores/article'
 
-interface Search {
+export interface Search {
   id: number
   query: string
   content: Article[]
