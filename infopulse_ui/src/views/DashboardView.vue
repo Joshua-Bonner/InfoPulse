@@ -1,23 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SearchTabs from '@/components/SearchTabs.vue'
+</script>
 
 <template>
-  <v-container class="body">
-    <v-row>
-      <v-col cols="12">
-        <v-card>
-          <v-card-title>Dashboard</v-card-title>
-          <v-card-text> Welcome to the InfoPulse dashboard. </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="body">
+    <SearchTabs />
+  </div>
 </template>
 
 <style scoped>
 .body {
   height: 90vh;
+  width: 180vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 40px;
 }
 </style>
