@@ -4,7 +4,7 @@ import SearchTabs from '@/components/SearchTabs.vue'
 
 <template>
   <div class="body">
-    <SearchTabs />
+    <search-tabs />
   </div>
 </template>
 
