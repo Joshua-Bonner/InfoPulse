@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchBar from '@/components/SearchBar.vue'
+import SearchBar from '@/components/search/SearchBar.vue'
 import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()

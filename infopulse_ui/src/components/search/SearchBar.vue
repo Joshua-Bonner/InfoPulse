@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
 import { useArticleStore } from '@/stores/article'
-import type { Ref } from 'vue'
 import type { Article } from '@/types/article'
 import type { Search } from '@/types/search'
 

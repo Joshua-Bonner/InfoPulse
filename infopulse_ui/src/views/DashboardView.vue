@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchTabs from '@/components/SearchTabs.vue'
+import SearchTabs from '@/components/search/SearchTabs.vue'
 </script>
 
 <template>

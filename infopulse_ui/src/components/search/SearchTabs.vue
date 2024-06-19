@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
-import articleCard from '@/components/ArticleCard.vue'
+import articleCard from '@/components/article/ArticleCard.vue'
 import { useArticleStore } from '@/stores/article'
 
 const searchTab: Ref<number | null> = ref(0)
