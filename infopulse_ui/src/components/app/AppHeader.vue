@@ -13,7 +13,12 @@ const userStore = useUserStore()
         InfoPulse
       </v-toolbar-title>
       <search-bar />
-      <v-btn class="text-uppercase font-weight-bold" rounded="0">Dashboard</v-btn>
+      <v-btn
+        class="text-uppercase font-weight-bold"
+        rounded="0"
+        @click="$router.push({ name: 'dashboard' })"
+        >Dashboard</v-btn
+      >
       <v-btn rounded="0" icon="mdi-dots-vertical" />
       <v-btn rounded="0" id="logout" icon="mdi-logout" @click="userStore.logout" />
     </v-app-bar>
