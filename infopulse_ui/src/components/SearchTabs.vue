@@ -2,26 +2,27 @@
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
+import articleCard from '@/components/ArticleCard.vue'
+import { useArticleStore } from '@/stores/article'
 
-const searchTab: Ref<string | null> = ref(null)
+const searchTab: Ref<number | null> = ref(0)
 const searchStore = useSearchStore()
+const articleStore = useArticleStore()
 </script>
 <template>
   <v-tabs v-model="searchTab" direction="vertical">
-    <v-tab v-for="search in searchStore.searches" :key="search.id" :value="search.query">
+    <v-tab v-for="search in searchStore.searches" :key="search.id" :value="search.id">
       {{ search.query }}
     </v-tab>
   </v-tabs>
 
   <v-tabs-window v-model="searchTab" class="tab-content">
-    <v-tabs-window-item
-      v-for="search in searchStore.searches"
-      :key="search.id"
-      :value="search.content"
-    >
-      <v-card flat>
-        <v-card-text> Content for {{ search.content }} </v-card-text>
-      </v-card>
+    <v-tabs-window-item v-for="search in searchStore.searches" :key="search.id" :value="search.id">
+      <v-row>
+        <v-col v-for="articleId in search.articleIds" :key="articleId">
+          <article-card :article="articleStore.getArticleById(articleId)" />
+        </v-col>
+      </v-row>
     </v-tabs-window-item>
   </v-tabs-window>
 </template>

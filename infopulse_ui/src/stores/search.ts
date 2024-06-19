@@ -1,13 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
-import type { Article } from '@/stores/article'
-
-export interface Search {
-  id: number
-  query: string
-  content: Article[]
-}
+import type { Search } from '@/types/search'
 
 export const useSearchStore = defineStore('search', () => {
   const searches: Ref<Search[]> = ref([])
