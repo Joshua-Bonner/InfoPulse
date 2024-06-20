@@ -18,7 +18,7 @@ const login = () => {
 
 <template>
   <v-container class="container">
-    <v-row>
+    <v-row justify="center" align="center">
       <v-col cols="6">
         <v-card>
           <v-card-title>
@@ -59,7 +59,7 @@ const login = () => {
         </v-card>
       </v-col>
       <v-col cols="6">
-        <v-img src="https://picsum.photos/500/300" />
+        <v-img src="https://picsum.photos/1500/1000" />
       </v-col>
     </v-row>
   </v-container>
@@ -69,7 +69,7 @@ const login = () => {
 .container {
   display: flex;
   align-items: center;
-  height: 90vh;
+  height: 93vh;
   width: 90vw;
 }
 .form {

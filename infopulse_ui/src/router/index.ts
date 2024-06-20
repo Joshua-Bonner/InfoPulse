@@ -21,6 +21,12 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('../views/DashboardView.vue')
+    },
+    {
+      path: '/article/:id',
+      name: 'article',
+      component: () => import('../views/ArticleView.vue'),
+      props: (route) => ({ id: Number(route.params.id) })
     }
   ]
 })

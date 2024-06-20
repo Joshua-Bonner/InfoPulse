@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
 import { useArticleStore } from '@/stores/article'
-import type { Ref } from 'vue'
 import type { Article } from '@/types/article'
 import type { Search } from '@/types/search'
 
@@ -18,11 +18,13 @@ const onClick = () => {
       id: 'test',
       name: 'test'
     },
-    author: 'test',
-    title: 'test',
-    description: 'test',
-    url: 'test',
-    urlToImage: 'test',
+    author: 'Adrian Wojnarowski',
+    title: 'Sources: Pistons fire Williams, still owe him $65M - ESPN',
+    description:
+      'After one season, the Pistons have dismissed coach Monty Williams, who leaves with five years and $65 million left on his deal, sources told ESPNs Adrian Wojnarowski.',
+    url: 'https://www.espn.com/nba/story/_/id/40385485/sources-pistons-fire-coach-monty-williams-one-season',
+    urlToImage:
+      'https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F1128%2Fr1259061_1296x729_16%2D9.jpg',
     publishedAt: '2024-06-19T13:39:00Z',
     content:
       'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt'

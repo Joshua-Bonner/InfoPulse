@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import AppHeader from '@/components/AppHeader.vue'
-import AppFooter from '@/components/AppFooter.vue'
+import AppHeader from '@/components/app/AppHeader.vue'
+import AppFooter from '@/components/app/AppFooter.vue'
 import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
