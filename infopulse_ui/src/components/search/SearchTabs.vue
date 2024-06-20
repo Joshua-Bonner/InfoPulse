@@ -10,8 +10,8 @@ const searchStore = useSearchStore()
 const articleStore = useArticleStore()
 </script>
 <template>
-  <v-tabs v-model="searchTab" direction="vertical">
-    <v-tab v-for="search in searchStore.searches" :key="search.id" :value="search.id">
+  <v-tabs v-model="searchTab" direction="vertical" class="tabs" color="deep-purple-accent-4">
+    <v-tab v-for="search in searchStore.searches" :key="search.id" :value="search.id" class="tab">
       {{ search.query }}
     </v-tab>
   </v-tabs>
@@ -32,5 +32,14 @@ const articleStore = useArticleStore()
   margin-top: 10px;
   width: 90%;
   padding: 0;
+  justify-items: center;
+}
+.tabs {
+  max-width: 200px;
+}
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

@@ -7,34 +7,31 @@ import type { Article } from '@/types/article'
 const props = defineProps<{
   id: number
 }>()
-const article: Article = useArticleStore().getArticleById(props.id)
 
+const article: Article = useArticleStore().getArticleById(props.id)
 const articleDate = computed(() => formatDate(article.publishedAt))
 </script>
 
 <template>
-  <v-sheet>
+  <v-sheet class="body" heigh="200">
     <v-row>
-      <v-col cols="12">
+      <v-col>
         <v-card>
-          <v-img :src="article.urlToImage" height="200">
-            <v-row class="fill-height" align="center">
-              <v-col>
-                <v-card-title class="text-h5 white--text">
-                  {{ article.title }}
-                </v-card-title>
-                <v-card-subtitle class="white--text">
-                  {{ articleDate }}
-                </v-card-subtitle>
-              </v-col>
-            </v-row>
-          </v-img>
-          <v-card-text>
-            {{ article.content }}
-          </v-card-text>
-          <v-card-actions> </v-card-actions>
+          <v-card-title>{{ article.title }}</v-card-title>
+          <v-card-subtitle>By: {{ article.author }}</v-card-subtitle>
+          <v-card-subtitle>Published: {{ articleDate }}</v-card-subtitle>
+          <v-card-text class="overflow-auto">{{ article.content }}</v-card-text>
         </v-card>
       </v-col>
     </v-row>
   </v-sheet>
 </template>
+
+<style scoped>
+.body {
+  height: 90vh;
+  width: 180vh;
+  display: flex;
+  padding-top: 40px;
+}
+</style>

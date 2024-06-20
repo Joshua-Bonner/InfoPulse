@@ -7,7 +7,7 @@ const userStore = useUserStore()
 
 <template>
   <v-container>
-    <v-app-bar :elevation="6" fixed>
+    <v-app-bar :elevation="6" fixed color="deep-purple-accent-4">
       <v-app-bar-nav-icon icon="mdi-menu" rounded="0" />
       <v-toolbar-title class="d-flex justify-space-between text-uppercase font-weight-bold">
         InfoPulse
