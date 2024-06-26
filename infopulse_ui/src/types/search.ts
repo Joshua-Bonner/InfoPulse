@@ -1,5 +1,7 @@
+import type { Article } from './article'
+
 export interface Search {
   id: number
   query: string
-  articleIds: number[]
+  articles: Article[]
 }
