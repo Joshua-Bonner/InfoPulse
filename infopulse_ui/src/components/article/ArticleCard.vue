@@ -19,7 +19,11 @@ const articleDate = computed(() => formatDate(props.article.publishedAt))
     @click="$router.push({ name: 'article', params: { id: props.article.id } })"
   >
     <v-card-title>{{ props.article.title }}</v-card-title>
-    <v-img :src="props.article.urlToImage"></v-img>
+    <v-img
+      :src="props.article.urlToImage || 'https://picsum.photos/400/200'"
+      max-height="200"
+      min-width="400"
+    ></v-img>
     <v-card-subtitle>Written By: {{ props.article.author }}</v-card-subtitle>
     <v-card-subtitle>Published On: {{ articleDate }}</v-card-subtitle>
   </v-card>

@@ -2,16 +2,17 @@ from pydantic import BaseModel
 
 
 class Source(BaseModel):
-    id: str
-    name: str
+    id: str | None
+    name: str | None
 
 
 class Article(BaseModel):
-    source: Source
-    author: str
-    title: str
-    description: str
-    url: str
-    urlToImage: str
-    publishedAt: str
-    content: str
+    id: int
+    source: Source | None
+    author: str | None
+    title: str | None
+    description: str | None
+    url: str | None
+    urlToImage: str | None
+    publishedAt: str | None
+    content: str | None

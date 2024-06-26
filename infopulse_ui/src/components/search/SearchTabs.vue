@@ -14,10 +14,10 @@ const searchStore = useSearchStore()
     </v-tab>
   </v-tabs>
 
-  <v-tabs-window v-model="searchTab" class="tab-content">
+  <v-tabs-window v-model="searchTab" class="tab-content" style="overflow: auto">
     <v-tabs-window-item v-for="search in searchStore.searches" :key="search.id" :value="search.id">
       <v-row>
-        <v-col v-for="article in search.articles" :key="article.id">
+        <v-col v-for="article in search.articles" :key="article.url">
           <article-card :article="article" />
         </v-col>
       </v-row>

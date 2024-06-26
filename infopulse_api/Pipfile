@@ -12,6 +12,7 @@ pyjwt = "*"
 passlib = "*"
 psycopg2 = "*"
 bcrypt = "*"
+newsapi-python = "*"
 
 [dev-packages]
 pytest = "*"
