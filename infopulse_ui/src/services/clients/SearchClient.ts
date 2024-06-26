@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-export const AuthClient = axios.create({
-  baseURL: 'http://localhost:8000/auth',
+export const SearchClient = axios.create({
+  baseURL: 'http://localhost:8000/search',
   withCredentials: false,
   headers: {
     Accept: 'application/x-www-form-urlencoded',

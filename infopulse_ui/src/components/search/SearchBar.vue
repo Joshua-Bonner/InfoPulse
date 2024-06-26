@@ -2,40 +2,13 @@
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
-import { useArticleStore } from '@/stores/article'
-import type { Article } from '@/types/article'
-import type { Search } from '@/types/search'
 
 const searchQuery: Ref<string> = ref('')
 const searchStore = useSearchStore()
-const articleStore = useArticleStore()
 
 const onClick = () => {
   if (!searchQuery.value) return
-  const article: Article = {
-    id: 0,
-    source: {
-      id: 'test',
-      name: 'test'
-    },
-    author: 'Adrian Wojnarowski',
-    title: 'Sources: Pistons fire Williams, still owe him $65M - ESPN',
-    description:
-      'After one season, the Pistons have dismissed coach Monty Williams, who leaves with five years and $65 million left on his deal, sources told ESPNs Adrian Wojnarowski.',
-    url: 'https://www.espn.com/nba/story/_/id/40385485/sources-pistons-fire-coach-monty-williams-one-season',
-    urlToImage:
-      'https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F1128%2Fr1259061_1296x729_16%2D9.jpg',
-    publishedAt: '2024-06-19T13:39:00Z',
-    content:
-      'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate velit esse cillum dolore fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt'
-  }
-  articleStore.addArticle(article)
-  const newSearch: Search = {
-    id: searchStore.searches.length + 1,
-    query: searchQuery.value,
-    articleIds: [0]
-  }
-  searchStore.addSearch(newSearch)
+  searchStore.search(searchQuery.value)
   searchQuery.value = ''
 }
 </script>
