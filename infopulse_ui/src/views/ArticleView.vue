@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { formatDate } from '@/components/article/ArticleHelper'
-import { useArticleStore } from '@/stores/article'
 import type { Article } from '@/types/article'
 
 const props = defineProps<{
-  id: number
+  article: Article
 }>()
 
-const article: Article = useArticleStore().getArticleById(props.id)
-const articleDate = computed(() => formatDate(article.publishedAt))
+const articleDate = computed(() => formatDate(props.article.publishedAt))
 </script>
 
 <template>
@@ -17,10 +15,10 @@ const articleDate = computed(() => formatDate(article.publishedAt))
     <v-row>
       <v-col>
         <v-card>
-          <v-card-title>{{ article.title }}</v-card-title>
-          <v-card-subtitle>By: {{ article.author }}</v-card-subtitle>
+          <v-card-title>{{ props.article.title }}</v-card-title>
+          <v-card-subtitle>By: {{ props.article.author }}</v-card-subtitle>
           <v-card-subtitle>Published: {{ articleDate }}</v-card-subtitle>
-          <v-card-text class="overflow-auto">{{ article.content }}</v-card-text>
+          <v-card-text class="overflow-auto">{{ props.article.content }}</v-card-text>
         </v-card>
       </v-col>
     </v-row>

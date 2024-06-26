@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 import { useAuthStore } from '@/stores/auth'
+import { useSearchStore } from '@/stores/search'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +27,17 @@ const router = createRouter({
       path: '/article/:id',
       name: 'article',
       component: () => import('../views/ArticleView.vue'),
-      props: (route) => ({ id: Number(route.params.id) })
+      props: true,
+      beforeEnter(to, from, next) {
+        const search = useSearchStore()
+        const article = search.getArticleById(Number(to.params.id))
+        if (article) {
+          to.params.article = article
+          next()
+        } else {
+          next({ name: 'dashboard' })
+        }
+      }
     }
   ]
 })

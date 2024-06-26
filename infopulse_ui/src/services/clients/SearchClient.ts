@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 export const SearchClient = axios.create({
-  baseURL: 'http://localhost:8000/search',
+  baseURL: 'http://localhost:8000',
   withCredentials: false,
   headers: {
-    Accept: 'application/x-www-form-urlencoded',
-    'Content-type': 'application/x-www-form-urlencoded'
+    Accept: 'application/json',
+    'Content-type': 'application/json'
   },
   timeout: 10000
 })
