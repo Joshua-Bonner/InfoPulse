@@ -13,6 +13,7 @@ passlib = "*"
 psycopg2 = "*"
 bcrypt = "*"
 newsapi-python = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 pytest = "*"

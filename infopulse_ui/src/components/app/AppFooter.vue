@@ -2,7 +2,7 @@
 
 <template>
   <v-container>
-    <v-footer>
+    <v-footer app class="pa-8">
       <v-row justify="center">
         <span style="font-weight: bold">Joshua Bonner</span>
         <span style="margin-right: 5px">@</span>
