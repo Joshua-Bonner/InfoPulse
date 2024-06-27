@@ -14,7 +14,6 @@ app.include_router(user_router, tags=["user"], prefix="/user")
 client = TestClient(app)
 
 
-# FIX ME
 def test_login_for_access_token():
     form_data = {"username": "test", "password": "test"}
     response = client.post("/auth/token", data=form_data)
@@ -23,7 +22,6 @@ def test_login_for_access_token():
     assert response.json()["token"]
 
 
-# FIX ME
 def test_login_for_access_token_bad_credentials():
     form_data = {"username": "test", "password": "bad"}
     response = client.post("/auth/token", data=form_data)
