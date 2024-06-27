@@ -1,4 +1,6 @@
 from app.main import app
+from app.routers.auth_router import router as auth_router
+from app.routers.user_router import router as user_router
 from common.helpers.auth import (
     create_access_token,
     decode_access_token,
@@ -7,6 +9,8 @@ from common.helpers.auth import (
 )
 from fastapi.testclient import TestClient
 
+app.include_router(auth_router, tags=["auth"], prefix="/auth")
+app.include_router(user_router, tags=["user"], prefix="/user")
 client = TestClient(app)
 
 
