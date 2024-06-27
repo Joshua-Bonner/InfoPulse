@@ -1,4 +1,6 @@
 from app.main import app
+from app.routers.auth_router import router as auth_router
+from app.routers.user_router import router as user_router
 from common.helpers.auth import (
     create_access_token,
     decode_access_token,
@@ -7,10 +9,11 @@ from common.helpers.auth import (
 )
 from fastapi.testclient import TestClient
 
+app.include_router(auth_router, tags=["auth"], prefix="/auth")
+app.include_router(user_router, tags=["user"], prefix="/user")
 client = TestClient(app)
 
 
-# FIX ME
 def test_login_for_access_token():
     form_data = {"username": "test", "password": "test"}
     response = client.post("/auth/token", data=form_data)
@@ -19,7 +22,6 @@ def test_login_for_access_token():
     assert response.json()["token"]
 
 
-# FIX ME
 def test_login_for_access_token_bad_credentials():
     form_data = {"username": "test", "password": "bad"}
     response = client.post("/auth/token", data=form_data)
