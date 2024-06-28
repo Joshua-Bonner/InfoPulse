@@ -38,6 +38,12 @@ npm run build
 npm run test:unit
 ```
 
+### Run Unit Tests with [Vitest](https://vitest.dev/) with V8 coverage report
+
+```sh
+npx vitest run --coverage
+```
+
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh

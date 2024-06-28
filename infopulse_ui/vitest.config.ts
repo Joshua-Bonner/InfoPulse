@@ -9,7 +9,13 @@ export default mergeConfig(
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
-      setupFiles: ['./vitest-setup.ts']
+      setupFiles: ['./vitest-setup.ts'],
+      coverage: {
+        // Options such as reporter, include, exclude, etc.
+        reporter: ['text', 'lcov', 'text-summary'],
+        include: ['src/**/*.{js,ts}'],
+        exclude: ['src/**/*.spec.{js,ts}']
+      }
     }
   })
 )
