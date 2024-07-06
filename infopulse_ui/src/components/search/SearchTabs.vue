@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import type { Ref } from 'vue'
 import { useSearchStore } from '@/stores/search'
 import articleCard from '@/components/article/ArticleCard.vue'
 
 const searchTab: Ref<number | null> = ref(0)
 const searchStore = useSearchStore()
+
+onMounted(() => {
+  searchStore.fetchSearches()
+})
 </script>
 <template>
   <v-tabs v-model="searchTab" direction="vertical" class="tabs" color="deep-purple-accent-4">

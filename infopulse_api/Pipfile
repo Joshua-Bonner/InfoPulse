@@ -15,6 +15,7 @@ bcrypt = "*"
 newsapi-python = "*"
 beautifulsoup4 = "*"
 coverage = "*"
+elasticsearch = "*"
 
 [dev-packages]
 pytest = "*"
