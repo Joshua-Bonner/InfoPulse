@@ -19,6 +19,19 @@ export const useSearchStore = defineStore('search', () => {
     addSearch(newSearch)
   }
 
+  async function fetchSearches() {
+    const fetchedSearches = await SearchService.fetchSearches().then((response) => {
+      return response.data.map((search: Search) => {
+        return {
+          id: search.id,
+          query: search.query,
+          articles: search.articles
+        }
+      })
+    })
+    searches.value = fetchedSearches
+  }
+
   function addSearch(search: Search) {
     searches.value.push(search)
   }
@@ -35,6 +48,7 @@ export const useSearchStore = defineStore('search', () => {
 
   return {
     searches,
+    fetchSearches,
     search,
     addSearch,
     getArticleById,
