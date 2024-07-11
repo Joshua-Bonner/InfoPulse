@@ -23,6 +23,13 @@ class UserHandler:
             user = session.get(User, id)
             return user
 
+    def get_user_search_prefs(self, id: int):
+        with self.db_client.get_session() as session:
+            user = session.get(User, id)
+            if user is None:
+                return None
+            return user.search_pref
+
     def get_user_by_username(self, username: str):
         with self.db_client.get_session() as session:
             statement = select(User).where(User.username == username)
