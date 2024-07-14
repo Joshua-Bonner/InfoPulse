@@ -2,7 +2,7 @@ import contextlib
 import os
 
 from dotenv import load_dotenv
-from sqlmodel import Session, create_engine
+from sqlmodel import Session, SQLModel, create_engine
 
 load_dotenv()
 
@@ -30,3 +30,6 @@ class DatabaseClient(metaclass=SingletonMeta):
             yield session
         finally:
             session.close()
+
+    def create_all(self):
+        SQLModel.metadata.create_all(self.engine)
