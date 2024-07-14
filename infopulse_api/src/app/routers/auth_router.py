@@ -4,16 +4,10 @@ from datetime import timedelta
 from typing import Annotated
 
 from common.data_handlers.user_handler import UserHandler
-from common.helpers.auth import (
-    authenticate_user,
-    create_access_token,
-    decode_access_token,
-    verify_pwd,
-)
+from common.helpers.auth import authenticate_user, create_access_token, verify_pwd
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from jwt.exceptions import InvalidTokenError
 from models.token import Token
 from models.user import User
 
@@ -31,29 +25,6 @@ credentials_exception = HTTPException(
 )
 
 EXPIRES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
-
-
-async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
-    try:
-        payload = decode_access_token(token)
-        username: str = payload.get("sub")
-        if username is None:
-            raise credentials_exception
-        token_data = Token(username=username)
-    except InvalidTokenError:
-        raise credentials_exception
-    user: User = await user_handler.get_user_by_username(token_data.username)
-    if user is None:
-        raise credentials_exception
-    return user
-
-
-async def get_current_active_user(
-    current_user: Annotated[User, Depends(get_current_user)]
-):
-    if current_user.disabled:
-        raise HTTPException(status_code=400, detail="Inactive user")
-    return current_user
 
 
 @router.post("/token", response_model=Token)

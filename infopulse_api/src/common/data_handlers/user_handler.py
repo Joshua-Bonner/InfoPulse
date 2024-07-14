@@ -1,7 +1,7 @@
 import logging
 
 from common.helpers.db_client import DatabaseClient
-from models.user import User
+from models.user import User, UserSearchPref
 from sqlmodel import select
 
 logger = logging.getLogger("uvicorn.error")
@@ -29,6 +29,13 @@ class UserHandler:
             if user is None:
                 return None
             return user.search_pref
+
+    def create_user_search_pref(self, user_search_pref: UserSearchPref):
+        with self.db_client.get_session() as session:
+            session.add(user_search_pref)
+            session.commit()
+            session.refresh(user_search_pref)
+            return user_search_pref
 
     def get_user_by_username(self, username: str):
         with self.db_client.get_session() as session:
