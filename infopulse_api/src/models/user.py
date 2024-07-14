@@ -8,8 +8,8 @@ from sqlmodel import ARRAY, Field, Relationship, SQLModel, String, UniqueConstra
 class User(SQLModel, table=True):
     __tablename__ = "user"
     id: int = Field(default=None, primary_key=True)
-    name: str = Field(index=True)
-    username: str
+    name: str = Field(index=True, unique=True)
+    username: str = Field(index=True, unique=True)
     password: str
     security_question: str
     security_answer: str

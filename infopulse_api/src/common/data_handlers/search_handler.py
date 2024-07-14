@@ -36,7 +36,7 @@ class SearchHandler:
         logger.info(f"Searching for {search_query}")
         default_query["q"] = search_query
         response = self.news_api.get_everything(**default_query)
-        articles = response["articles"][:10]
+        articles = response["articles"][:9]
         for article in articles:
             article["id"] = url_to_unique_int(article["url"])
             article["content"] = get_article_text(article["url"])

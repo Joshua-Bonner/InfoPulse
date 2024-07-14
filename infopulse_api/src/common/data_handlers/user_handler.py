@@ -23,9 +23,10 @@ class UserHandler:
             user = session.get(User, id)
             return user
 
-    def get_user_search_prefs(self, id: int):
+    def get_user_search_prefs(self, username: str):
         with self.db_client.get_session() as session:
-            user = session.get(User, id)
+            statement = select(User).where(User.username == username)
+            user = session.exec(statement).first()
             if user is None:
                 return None
             return user.search_pref
@@ -33,6 +34,18 @@ class UserHandler:
     def create_user_search_pref(self, user_search_pref: UserSearchPref):
         with self.db_client.get_session() as session:
             session.add(user_search_pref)
+            session.commit()
+            session.refresh(user_search_pref)
+            return user_search_pref
+
+    def update_user_search_pref(self, id: int, data: UserSearchPref):
+        with self.db_client.get_session() as session:
+            user_search_pref = session.get(UserSearchPref, id)
+            if user_search_pref is None:
+                return None
+            user_search_pref_data = data.model_dump()
+            for key, value in user_search_pref_data.items():
+                setattr(user_search_pref, key, value)
             session.commit()
             session.refresh(user_search_pref)
             return user_search_pref

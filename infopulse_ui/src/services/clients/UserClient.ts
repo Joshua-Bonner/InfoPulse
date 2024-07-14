@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-export const SearchClient = axios.create({
-  baseURL: 'http://localhost:8000/search',
+export const UserClient = axios.create({
+  baseURL: 'http://localhost:8000/user',
   withCredentials: false,
   headers: {
     Accept: 'application/json',

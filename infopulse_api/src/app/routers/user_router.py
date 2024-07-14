@@ -37,10 +37,10 @@ async def get_current_user_endpoint(token: str):
         raise HTTPException(status_code=400, detail="Failed to get current user")
 
 
-@router.get("/user_search_prefs/{id}", response_model=UserSearchPref)
-async def get_user_search_prefs(id: int):
+@router.get("/search_prefs/{username}", response_model=UserSearchPref)
+async def get_user_search_prefs(username: str):
     try:
-        user_search_prefs = user_handler.get_user_search_prefs(id)
+        user_search_prefs = user_handler.get_user_search_prefs(username)
         if user_search_prefs is None:
             return JSONResponse(status_code=404, content={"message": "User not found"})
         return user_search_prefs
@@ -51,7 +51,7 @@ async def get_user_search_prefs(id: int):
         )
 
 
-@router.put("/user_search_prefs")
+@router.post("/search_prefs")
 async def create_user_search_prefs(user_search_pref: UserSearchPref):
     try:
         user_handler.create_user_search_pref(user_search_pref)
@@ -62,6 +62,25 @@ async def create_user_search_prefs(user_search_pref: UserSearchPref):
         logger.error(e)
         raise HTTPException(
             status_code=400, detail="Failed to create user search preferences"
+        )
+
+
+@router.put("/search_prefs/{id}")
+async def update_user_search_prefs(id: int, user_search_pref: UserSearchPref):
+    try:
+        user_search_pref = user_handler.update_user_search_pref(id, user_search_pref)
+        if user_search_pref is None:
+            return JSONResponse(
+                status_code=404,
+                content={"message": "User search preferences not found"},
+            )
+        return JSONResponse(
+            status_code=200, content={"message": "User search preferences updated"}
+        )
+    except Exception as e:
+        logger.error(e)
+        raise HTTPException(
+            status_code=400, detail="Failed to update user search preferences"
         )
 
 
