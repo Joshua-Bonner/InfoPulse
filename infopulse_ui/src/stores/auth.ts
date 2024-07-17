@@ -12,8 +12,8 @@ export const useAuthStore = defineStore('auth', () => {
     try {
       const userStore = useUserStore()
       const response = await AuthService.login(username, password)
-      userStore.setUser(response.data)
-      localStorage.setItem('user', JSON.stringify(response.data))
+      userStore.setUserToken(response.data)
+      localStorage.setItem('user_token', JSON.stringify(response.data))
       router.push(returnUrl.value || '/dashboard')
     } catch (error: any) {
       if (error.response.status === 401) {

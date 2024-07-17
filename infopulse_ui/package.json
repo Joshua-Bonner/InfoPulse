@@ -14,8 +14,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@date-io/dayjs": "^3.0.0",
     "@mdi/font": "^7.4.47",
     "axios": "^1.7.2",
+    "date-fns": "^3.6.0",
+    "dayjs": "^1.11.11",
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",

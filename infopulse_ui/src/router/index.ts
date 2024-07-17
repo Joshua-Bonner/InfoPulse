@@ -48,7 +48,7 @@ router.beforeEach(async (to) => {
   const user = useUserStore()
   const auth = useAuthStore()
 
-  if (authRequired && !user.user) {
+  if (authRequired && !user.userToken) {
     auth.returnUrl = to.fullPath
     return '/login'
   }

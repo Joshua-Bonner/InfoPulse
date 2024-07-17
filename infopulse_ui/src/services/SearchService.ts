@@ -2,9 +2,9 @@ import { SearchClient } from './clients/SearchClient'
 
 export default {
   search(query: string) {
-    return SearchClient.get('/search?search_query=' + query)
+    return SearchClient.get('/?search_query=' + query)
   },
   fetchSearches() {
-    return SearchClient.get('/search/all')
+    return SearchClient.get('/all')
   }
 }
