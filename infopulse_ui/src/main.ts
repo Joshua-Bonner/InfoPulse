@@ -8,6 +8,7 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+import DayJsAdapter from '@date-io/dayjs'
 
 import App from './App.vue'
 import router from './router'
@@ -15,6 +16,9 @@ import router from './router'
 const vuetify = createVuetify({
   components,
   directives,
+  date: {
+    adapter: new DayJsAdapter()
+  },
   icons: {
     defaultSet: 'mdi',
     aliases,

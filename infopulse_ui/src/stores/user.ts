@@ -21,6 +21,14 @@ export const useUserStore = defineStore('user', () => {
     userToken.value = newUser
   }
 
+  function updateSearchPref() {
+    if (!userSearchPref.value) return
+    UserService.updateUserSearchPrefs(
+      userSearchPref.value.id,
+      userSearchPref.value as UserSearchPref
+    )
+  }
+
   function logout() {
     userToken.value = {} as UserToken
     localStorage.removeItem('user_token')
@@ -32,6 +40,7 @@ export const useUserStore = defineStore('user', () => {
     userSearchPref,
     curentUserName,
     setUserToken,
+    updateSearchPref,
     logout
   }
 })

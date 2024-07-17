@@ -17,7 +17,7 @@ export default {
   fetchUserSearchPrefs(name: string) {
     return UserClient.get('/search_prefs/' + name)
   },
-  updateUserSearchPrefs(data: UserSearchPref) {
-    return UserClient.put('/search_prefs', data)
+  updateUserSearchPrefs(id: Number, data: UserSearchPref) {
+    return UserClient.put('/search_prefs/' + id, data)
   }
 }
