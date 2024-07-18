@@ -3,7 +3,11 @@ import os
 from datetime import date, timedelta
 
 from common.helpers.es_client import ESClient
-from common.helpers.search_helper import get_article_text, url_to_unique_int
+from common.helpers.search_helper import (
+    construct_query,
+    get_article_text,
+    url_to_unique_int,
+)
 from dotenv import load_dotenv
 from models.search import Search
 from newsapi import NewsApiClient
@@ -34,8 +38,7 @@ class SearchHandler:
 
     def search(self, search_query: str):
         logger.info(f"Searching for {search_query}")
-        default_query["q"] = search_query
-        response = self.news_api.get_everything(**default_query)
+        response = self.news_api.get_everything(**construct_query(search_query))
         articles = response["articles"][:9]
         for article in articles:
             article["id"] = url_to_unique_int(article["url"])
