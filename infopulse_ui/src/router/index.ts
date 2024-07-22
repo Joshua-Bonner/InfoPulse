@@ -38,6 +38,11 @@ const router = createRouter({
           next({ name: 'dashboard' })
         }
       }
+    },
+    {
+      path: '/acct-create',
+      name: 'acct-create',
+      component: () => import('../views/AccountCreateView.vue')
     }
   ]
 })
