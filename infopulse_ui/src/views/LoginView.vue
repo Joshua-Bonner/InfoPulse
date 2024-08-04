@@ -51,7 +51,7 @@ const login = () => {
                   <router-link to="/acct-create">Create Account</router-link>
                 </v-col>
                 <v-col cols="6" class="d-flex justify-end">
-                  <router-link to="/cred-recovery">Forgot password?</router-link>
+                  <router-link to="/acct-recovery">Forgot password?</router-link>
                 </v-col>
               </v-row>
             </v-form>
