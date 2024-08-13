@@ -43,6 +43,11 @@ const router = createRouter({
       path: '/acct-create',
       name: 'acct-create',
       component: () => import('../views/AccountCreateView.vue')
+    },
+    {
+      path: '/acct-recovery',
+      name: 'acct-recovery',
+      component: () => import('../views/AccountRecoveryView.vue')
     }
   ]
 })
